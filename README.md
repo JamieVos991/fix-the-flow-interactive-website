@@ -1,22 +1,32 @@
+# Sprint 6 – Technische onderbouwing (CSS & HTML)
+## Layout & Responsive 
+- Mobile first aanpak: De layout is opgebouwd vanuit mobile en uitgebreid met @media (min-width: 1000px)
+- Flexbox en Grid gebruik: Flexbox toegepast voor: Navigatie, Verticale stacks, Card layouts
+- Grid toegepast voor: Complexe desktop layouts (section 4)
 
-Ontwerp en maak een interactieve website voor een opdrachtgever.
+### Typografie & Schaalbaarheid
+- Gebruik van clamp(), bijvoorbeeld: font-size: clamp(2.5rem, 5vw, 4rem);
+- max-width voor tekst
 
-De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/fix-the-flow-interactive-website/blob/main/docs/INSTRUCTIONS.md)
+### Visuele keuzes
+Grid achtergrond
+body {
+  background: linear-gradient(...);
+}
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+### GSAP animaties
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+<pre>gsap.from(".intro h1", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: "power3.out",
+});
+</pre>
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
-
-## Bronnen
-
-## Licentie
-
-This project is licensed under the terms of the [MIT license](./LICENSE).
-
+## Toegankelijkheid
+- Semantische elementen (header, nav, main, section, article)
+- aria-label op menu buttons
+- Alt teksten op afbeeldingen
+- Focusbare interactieve elementen
+- Leesbare line-height 
